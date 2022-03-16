@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:id="@+id/llbranditemdetails">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Tên Nhãn Hàng:"
+            android:textSize="18sp"
+            android:textColor="@color/black" />
+        <TextView
+            android:id="@+id/txtBrandNameItem"
+            android:layout_width="350dp"
+            android:layout_height="wrap_content"
+            android:text="Brand Name"
+            android:textSize="18sp"
+            android:layout_marginLeft="30dp"
+            android:textColor="@color/black" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Trạng Thái:"
+            android:textSize="18sp"
+            android:textColor="@color/black" />
+        <TextView
+            android:id="@+id/txtStatusItem"
+            android:layout_width="350dp"
+            android:layout_height="wrap_content"
+            android:textAlignment="textStart"
+            android:text="Status"
+            android:layout_marginLeft="30dp"
+            android:textSize="18sp"
+            android:textColor="@color/black" />
+
+    </LinearLayout>
+
+</RelativeLayout>

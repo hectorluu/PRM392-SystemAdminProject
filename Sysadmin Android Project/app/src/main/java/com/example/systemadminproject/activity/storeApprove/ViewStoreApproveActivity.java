@@ -3,6 +3,7 @@ package com.example.systemadminproject.activity.storeApprove;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.os.Handler;
 import android.widget.GridView;
 import android.widget.Toast;
 
@@ -34,7 +35,9 @@ public class ViewStoreApproveActivity extends AppCompatActivity {
     protected void onStart() {
         super.onStart();
 
-        callAPI();
+        new Handler().postDelayed (() -> {
+            callAPI();
+        }, 1000);
     }
 
     public void callAPI() {

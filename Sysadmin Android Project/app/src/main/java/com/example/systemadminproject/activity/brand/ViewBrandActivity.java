@@ -42,7 +42,7 @@ public class ViewBrandActivity extends AppCompatActivity {
     }
 
     public void callAPI() {
-        BrandService.getApi().getBrandsList()
+        BrandService.getApi().getBrandsList(1, 999)
                 .enqueue(new Callback<BrandResponse>() {
                     @Override
                     public void onResponse(Call<BrandResponse> call, Response<BrandResponse> response) {

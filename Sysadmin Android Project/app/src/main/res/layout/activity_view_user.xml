@@ -21,31 +21,37 @@
         android:layout_marginTop="30dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
-        <TextView
-            android:layout_marginLeft="10dp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Tên Người Dùng: "
-            android:textSize="18dp">
-        </TextView>
+        android:orientation="horizontal"
+        android:focusable="false"
+        android:focusableInTouchMode="true">
 
         <EditText
-            android:layout_width="200dp"
+            android:layout_width="300dp"
             android:layout_marginLeft="10dp"
             android:layout_marginRight="10dp"
-            android:layout_height="wrap_content"
-            android:enabled="false"
+            android:layout_height="45dp"
             android:inputType="text"
-            android:background="@color/white"
             android:textSize="16dp"
+            android:hint="    Nhập Tên Người Dùng"
+            android:textColor="@color/black"
+            android:id="@+id/txtSearchName"
             >
         </EditText>
 
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/ic_baseline_search_24">
+            android:src="@drawable/ic_baseline_search_24"
+            android:onClick="clickToSearch"
+            android:padding="10dp">
+        </ImageView>
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_baseline_rotate_right_24"
+            android:onClick="clickToReset"
+            tools:ignore="OnClick"
+            android:padding="10dp">
         </ImageView>
     </LinearLayout>
 

@@ -1,6 +1,58 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:id="@+id/llstoreitemdetails">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Tên Cửa Hàng:"
+            android:textSize="18sp"
+            android:textColor="@color/black" />
+        <TextView
+            android:id="@+id/txtStoreNameItem"
+            android:layout_width="350dp"
+            android:layout_height="wrap_content"
+            android:text="Store Name"
+            android:textSize="18sp"
+            android:layout_marginLeft="30dp"
+            android:textColor="@color/black" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Địa Chỉ:"
+            android:textSize="18sp"
+            android:textColor="@color/black" />
+        <TextView
+            android:id="@+id/txtAddressItem"
+            android:layout_width="350dp"
+            android:layout_height="wrap_content"
+            android:textAlignment="textStart"
+            android:text="Address"
+            android:layout_marginLeft="30dp"
+            android:textSize="18sp"
+            android:textColor="@color/black" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Thương Hiệu:"
+            android:textSize="18sp"
+            android:textColor="@color/black" />
+        <TextView
+            android:id="@+id/txtBrandNameOfStoreItem"
+            android:layout_width="350dp"
+            android:layout_height="wrap_content"
+            android:textAlignment="textStart"
+            android:text="BrandName"
+            android:layout_marginLeft="30dp"
+            android:textSize="18sp"
+            android:textColor="@color/black" />
+
+    </LinearLayout>
+
+</RelativeLayout>

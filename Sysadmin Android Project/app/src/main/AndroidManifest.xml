@@ -25,9 +25,6 @@
             android:name=".activity.store.ViewStoreActivity"
             android:exported="false" />
         <activity
-            android:name=".activity.user.ViewUserDetailsActivity"
-            android:exported="false" />
-        <activity
             android:name=".activity.user.ViewUserActivity"
             android:exported="false" />
         <activity

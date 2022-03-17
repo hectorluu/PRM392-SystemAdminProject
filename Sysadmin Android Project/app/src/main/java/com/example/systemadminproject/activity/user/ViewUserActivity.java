@@ -4,6 +4,8 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.os.Handler;
+import android.view.View;
+import android.widget.EditText;
 import android.widget.GridView;
 import android.widget.Toast;
 
@@ -32,6 +34,7 @@ public class ViewUserActivity extends AppCompatActivity {
         setContentView(R.layout.activity_view_user);
 
         gvUser = findViewById(R.id.gvUser);
+
     }
 
     @Override
@@ -41,10 +44,11 @@ public class ViewUserActivity extends AppCompatActivity {
         new Handler().postDelayed (() -> {
             callAPI();
         }, 1000);
+
     }
 
     public void callAPI() {
-        UserService.getApi().getUsersList()
+        UserService.getApi().getUsersList("", 0, 1, 999)
                 .enqueue(new Callback<UserResponse>() {
                     @Override
                     public void onResponse(Call<UserResponse> call, Response<UserResponse> response) {
@@ -59,5 +63,33 @@ public class ViewUserActivity extends AppCompatActivity {
                         Toast.makeText(ViewUserActivity.this, "Call API failed", Toast.LENGTH_SHORT).show();
                     }
                 });
+    }
+
+    public void clickToSearch(View view) {
+        EditText searchName = findViewById(R.id.txtSearchName);
+        String searchTerm = searchName.getText().toString();
+
+        UserService.getApi().getUsersList(searchTerm, 0, 1, 999)
+            .enqueue(new Callback<UserResponse>() {
+                        @Override
+                        public void onResponse(Call<UserResponse> call, Response<UserResponse> response) {
+                            Toast.makeText(ViewUserActivity.this, "Call API successfully", Toast.LENGTH_SHORT).show();
+                            List<UserData> userList = response.body().getData();
+                            userAdapter.setUserList(userList);
+                            gvUser.setAdapter(userAdapter);
+                        }
+
+                        @Override
+                        public void onFailure(Call<UserResponse> call, Throwable t) {
+                            Toast.makeText(ViewUserActivity.this, "Call API failed", Toast.LENGTH_SHORT).show();
+                        }
+                    });
+    }
+
+    public void clickToReset(View view) {
+        EditText searchName = findViewById(R.id.txtSearchName);
+        searchName.getText().clear();
+        callAPI();
+        gvUser.setAdapter(userAdapter);
     }
 }

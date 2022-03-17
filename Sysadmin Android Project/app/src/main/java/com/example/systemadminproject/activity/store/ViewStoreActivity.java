@@ -44,7 +44,7 @@ public class ViewStoreActivity extends AppCompatActivity {
     }
 
     public void callAPI() {
-        StoreService.getApi().getStoresList()
+        StoreService.getApi().getStoresList(1, 999)
                 .enqueue(new Callback<StoreResponse>() {
                     @Override
                     public void onResponse(Call<StoreResponse> call, Response<StoreResponse> response) {

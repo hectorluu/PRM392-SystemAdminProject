@@ -3,8 +3,10 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/luudu/Desktop/PRM392-SystemAdminProject/Sysadmin Android Project/app/src/main/res/layout/activity_main.xml" value="0.2" />
         <entry key="..\:/Users/luudu/Desktop/PRM392-SystemAdminProject/Sysadmin Android Project/app/src/main/res/layout/activity_view_brand.xml" value="0.24864130434782608" />
         <entry key="..\:/Users/luudu/Desktop/PRM392-SystemAdminProject/Sysadmin Android Project/app/src/main/res/layout/activity_view_brand_details.xml" value="0.24864130434782608" />
+        <entry key="..\:/Users/luudu/Desktop/PRM392-SystemAdminProject/Sysadmin Android Project/app/src/main/res/layout/activity_view_user.xml" value="0.176" />
         <entry key="..\:/Users/luudu/Desktop/PRM392-SystemAdminProject/Sysadmin Android Project/app/src/main/res/layout/brand_details_grid_item.xml" value="0.24864130434782608" />
         <entry key="..\:/Users/luudu/Desktop/PRM392-SystemAdminProject/Sysadmin Android Project/app/src/main/res/layout/brand_grid_item.xml" value="0.24864130434782608" />
         <entry key="..\:/Users/luudu/Desktop/PRM392-SystemAdminProject/Sysadmin Android Project/app/src/main/res/layout/store_approve_details_grid_item.xml" value="0.24864130434782608" />

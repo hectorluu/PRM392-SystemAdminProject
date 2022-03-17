@@ -42,7 +42,7 @@ public class ViewStoreApproveActivity extends AppCompatActivity {
 
     public void callAPI() {
         int approveStatus = 1;
-        StoreService.getApi().getStoresListPending(approveStatus)
+        StoreService.getApi().getStoresListPending(approveStatus, 1, 999)
                 .enqueue(new Callback<StoreResponse>() {
                     @Override
                     public void onResponse(Call<StoreResponse> call, Response<StoreResponse> response) {

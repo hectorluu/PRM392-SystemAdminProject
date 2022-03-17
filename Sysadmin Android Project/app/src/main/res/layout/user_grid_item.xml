@@ -85,11 +85,11 @@
     </LinearLayout>
 
     <Button
-        android:id="@+id/btnDetailOfUser"
+        android:id="@+id/btnDeleteUser"
         android:layout_width="100dp"
         android:layout_height="60dp"
         android:layout_marginStart="280dp"
         android:layout_marginTop="40dp"
-        android:text="Chi tiết" />
+        android:text="Xóa" />
 
 </RelativeLayout>

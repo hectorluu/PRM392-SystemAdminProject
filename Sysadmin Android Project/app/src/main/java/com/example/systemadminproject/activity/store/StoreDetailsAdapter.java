@@ -2,6 +2,7 @@ package com.example.systemadminproject.activity.store;
 
 import android.content.Intent;
 import android.graphics.Color;
+import android.graphics.Typeface;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -77,9 +78,10 @@ public class StoreDetailsAdapter extends BaseAdapter implements ListAdapter {
 
             TextView Store = new TextView(view.getContext());
             LinearLayout.LayoutParams lp = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT);
-            Store.setTextSize(18);
+            Store.setTextSize(20);
             Store.setText("Chủ Sở Hữu:");
             Store.setTag("uniqueUser");
+            Store.setTypeface(null, Typeface. BOLD);
             Store.setTextColor(Color.rgb(0, 0, 0));
             Store.setLayoutParams(lp);
             layout.addView(Store);
@@ -90,7 +92,7 @@ public class StoreDetailsAdapter extends BaseAdapter implements ListAdapter {
                 LinearLayout.LayoutParams lpTemp = new LinearLayout.LayoutParams( LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT);
                 lpTemp.setMarginStart(30);
                 UserTemp.setTextSize(18);
-                UserTemp.setText("+ " + user.getName());
+                UserTemp.setText("\u2022 " + user.getName());
                 UserTemp.setTextColor(Color.rgb(0, 0, 0));
                 UserTemp.setLayoutParams(lpTemp);
 
@@ -100,7 +102,13 @@ public class StoreDetailsAdapter extends BaseAdapter implements ListAdapter {
             Button btnDelete = new Button(view.getContext());
             LinearLayout.LayoutParams llbtn = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT);
             btnDelete.setText("Dừng Hoạt Động");
-            btnDelete.setGravity(Gravity.CENTER);
+            llbtn.weight = 1.0f;
+            llbtn.gravity = Gravity.CENTER;
+            llbtn.setMargins(0, 40, 0, 20);
+            btnDelete.setBackgroundColor(Color.rgb(144,22,22));
+            btnDelete.setPadding(30, 0, 30, 0);
+            btnDelete.setTextColor(Color.WHITE);
+
             btnDelete.setLayoutParams(llbtn);
 
             btnDelete.setOnClickListener(new View.OnClickListener() {
@@ -111,7 +119,7 @@ public class StoreDetailsAdapter extends BaseAdapter implements ListAdapter {
                                 @Override
                                 public void onResponse(@NonNull Call<Void> call, @NonNull Response<Void> response) {
                                     if (response.isSuccessful()) {
-                                        Toast.makeText(btnDelete.getContext(), "Delete Store Successfully", Toast.LENGTH_SHORT).show();
+                                        Toast.makeText(btnDelete.getContext(), "Dừng Cửa Hàng Thành Công", Toast.LENGTH_SHORT).show();
                                     } else {
                                         Toast.makeText(btnDelete.getContext(), "Something wrong happens", Toast.LENGTH_SHORT).show();
                                     }
@@ -129,7 +137,8 @@ public class StoreDetailsAdapter extends BaseAdapter implements ListAdapter {
                 }
             });
 
-            layout.addView(btnDelete);
+            if (_store.getApprovedStatus() == 0)
+                layout.addView(btnDelete);
         }
 
         return view;

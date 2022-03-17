@@ -18,8 +18,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="25dp"
-                android:text="Tên nhãn hàng:"
+                android:text="Tên Thương Hiệu:"
                 android:textSize="18sp"
+                android:textColor="@color/black"
                 android:textStyle="bold" />
             <TextView
                 android:id="@+id/txtBrandName"
@@ -28,7 +29,7 @@
                 android:text="Brand Name"
                 android:textColor="@color/black"
                 android:textSize="18sp"
-                android:layout_marginLeft="20dp"/>
+                android:layout_marginLeft="15dp"/>
         </LinearLayout>
 
         <LinearLayout
@@ -40,7 +41,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="10dp"
-                android:text="Số cửa hàng"
+                android:text="Số Cửa Hàng:"
+                android:textColor="@color/black"
                 android:textSize="18sp"
                 android:textStyle="bold" />
 
@@ -50,20 +52,21 @@
                 android:layout_height="wrap_content"
                 android:text="Store Number"
                 android:textColor="@color/black"
-                android:textSize="18sp"
-                android:layout_marginLeft="7dp"/>
+                android:textSize="16sp"
+                android:layout_marginLeft="2dp"/>
         </LinearLayout>
 
         <LinearLayout
-            android:layout_width="250dp"
+            android:layout_width="270dp"
             android:layout_height="wrap_content"
             android:orientation="horizontal">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginEnd="35dp"
-                android:text="Trạng thái"
+                android:layout_marginEnd="30dp"
+                android:text="Trạng Thái:"
+                android:textColor="@color/black"
                 android:textSize="18sp"
                 android:textStyle="bold" />
 
@@ -73,7 +76,7 @@
                 android:layout_height="wrap_content"
                 android:text="Status"
                 android:textColor="@color/black"
-                android:textSize="18sp" />
+                android:textSize="16sp" />
         </LinearLayout>
 
         <View
@@ -82,13 +85,12 @@
             android:layout_height="1dp"
             android:background="@android:color/darker_gray"/>
     </LinearLayout>
-
     <Button
         android:id="@+id/btnDetail"
         android:layout_width="100dp"
         android:layout_height="60dp"
         android:layout_marginStart="280dp"
-        android:layout_marginTop="15dp"
+        android:layout_marginTop="20dp"
         android:text="Chi tiết" />
 
 </RelativeLayout>

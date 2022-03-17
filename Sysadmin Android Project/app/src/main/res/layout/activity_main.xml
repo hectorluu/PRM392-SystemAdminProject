@@ -48,9 +48,9 @@
                     android:layout_height="80dp"/>
                 <TextView
                     android:layout_marginTop="12dp"
-                    android:textColor="#6f6f6f"
+                    android:textColor="@color/black"
                     android:textSize="18sp"
-                    android:text="Nhãn Hàng"
+                    android:text="Thương Hiệu"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"/>
             </LinearLayout>
@@ -76,7 +76,7 @@
                         android:layout_height="80dp"/>
                     <TextView
                         android:layout_marginTop="12dp"
-                        android:textColor="#6f6f6f"
+                        android:textColor="@color/black"
                         android:textSize="18sp"
                         android:text="Cửa Hàng"
                         android:layout_width="wrap_content"
@@ -110,7 +110,7 @@
                         android:layout_height="80dp"/>
                     <TextView
                         android:layout_marginTop="12dp"
-                        android:textColor="#6f6f6f"
+                        android:textColor="@color/black"
                         android:textSize="18sp"
                         android:text="Người Dùng"
                         android:layout_width="wrap_content"
@@ -138,7 +138,7 @@
                         android:layout_height="80dp"/>
                     <TextView
                         android:layout_marginTop="12dp"
-                        android:textColor="#6f6f6f"
+                        android:textColor="@color/black"
                         android:textSize="18sp"
                         android:text="Duyệt Cửa Hàng"
                         android:layout_width="wrap_content"

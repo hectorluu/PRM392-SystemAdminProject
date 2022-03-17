@@ -46,7 +46,6 @@ public class ViewStoreApproveActivity extends AppCompatActivity {
                 .enqueue(new Callback<StoreResponse>() {
                     @Override
                     public void onResponse(Call<StoreResponse> call, Response<StoreResponse> response) {
-                        Toast.makeText(ViewStoreApproveActivity.this, "Call API successfully", Toast.LENGTH_SHORT).show();
                         List<StoreData> storeList = response.body().getData();
                         storeApproveAdapter.setStoreList(storeList);
                         gvStoreApprove.setAdapter(storeApproveAdapter);

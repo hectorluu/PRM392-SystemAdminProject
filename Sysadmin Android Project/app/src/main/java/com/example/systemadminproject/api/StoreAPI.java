@@ -1,5 +1,6 @@
 package com.example.systemadminproject.api;
 
+import com.example.systemadminproject.activity.storeApprove.StoreApproveStatus;
 import com.example.systemadminproject.model.login.LoginRequest;
 import com.example.systemadminproject.model.login.LoginResponse;
 import com.example.systemadminproject.model.store.StoreResponse;
@@ -7,8 +8,10 @@ import com.example.systemadminproject.model.store.StoreResponse;
 import java.util.List;
 
 import retrofit2.Call;
+import retrofit2.http.Body;
 import retrofit2.http.DELETE;
 import retrofit2.http.GET;
+import retrofit2.http.PUT;
 import retrofit2.http.Path;
 import retrofit2.http.Query;
 
@@ -24,4 +27,8 @@ public interface StoreAPI {
 
     @DELETE("api/v1.0/stores/{id}")
     Call<Void> deleteStore(@Path("id") int storeId);
+
+    @PUT("api/v1.0/stores/{id}/status")
+    Call<Void> approveStore(@Path("id") int storeId,
+                            @Body StoreApproveStatus status);
 }

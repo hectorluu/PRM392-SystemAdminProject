@@ -44,7 +44,7 @@ public class LoginActivity extends AppCompatActivity {
                             if (response.isSuccessful()){
                                 if (!response.body().getToken().isEmpty()) {
                                     isLogin = true;
-                                    Toast.makeText(LoginActivity.this, "Login Successfully !", Toast.LENGTH_SHORT).show();
+                                    Toast.makeText(LoginActivity.this, "Đăng Nhập Thành Công", Toast.LENGTH_SHORT).show();
                                     SharedPreferences sharedPreferences = getSharedPreferences(Constants.GROCERY_CLOUD_SHARED_PREFERENCE, Context.MODE_PRIVATE);
                                 }
                             } else {

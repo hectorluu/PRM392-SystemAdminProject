@@ -52,7 +52,6 @@ public class ViewUserActivity extends AppCompatActivity {
                 .enqueue(new Callback<UserResponse>() {
                     @Override
                     public void onResponse(Call<UserResponse> call, Response<UserResponse> response) {
-                        Toast.makeText(ViewUserActivity.this, "Call API successfully", Toast.LENGTH_SHORT).show();
                         List<UserData> userList = response.body().getData();
                         userAdapter.setUserList(userList);
                         gvUser.setAdapter(userAdapter);
@@ -73,7 +72,6 @@ public class ViewUserActivity extends AppCompatActivity {
             .enqueue(new Callback<UserResponse>() {
                         @Override
                         public void onResponse(Call<UserResponse> call, Response<UserResponse> response) {
-                            Toast.makeText(ViewUserActivity.this, "Call API successfully", Toast.LENGTH_SHORT).show();
                             List<UserData> userList = response.body().getData();
                             userAdapter.setUserList(userList);
                             gvUser.setAdapter(userAdapter);

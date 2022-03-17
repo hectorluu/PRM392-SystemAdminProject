@@ -46,7 +46,6 @@ public class ViewBrandActivity extends AppCompatActivity {
                 .enqueue(new Callback<BrandResponse>() {
                     @Override
                     public void onResponse(Call<BrandResponse> call, Response<BrandResponse> response) {
-                        Toast.makeText(ViewBrandActivity.this, "Call API successfully", Toast.LENGTH_SHORT).show();
                         List<BrandData> brandList = response.body().getData();
                         brandAdapter.setBrandList(brandList);
                         gvBrand.setAdapter(brandAdapter);

@@ -18,8 +18,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="25dp"
-                android:text="Tên cửa hàng:"
-                android:textSize="18sp"
+                android:text="Tên Cửa Hàng:"
+                android:textColor="@color/black"
+                android:textSize="20sp"
                 android:textStyle="bold" />
             <TextView
                 android:id="@+id/txtStoreNameOfStoreApprove"
@@ -40,8 +41,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="10dp"
-                android:text="Nhãn hàng:"
-                android:textSize="18sp"
+                android:text="Thương Hiệu:"
+                android:textSize="20sp"
+                android:textColor="@color/black"
                 android:textStyle="bold" />
 
             <TextView
@@ -63,8 +65,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="35dp"
-                android:text="Địa chỉ:"
-                android:textSize="18sp"
+                android:text="Địa Chỉ:"
+                android:textSize="20sp"
+                android:textColor="@color/black"
                 android:textStyle="bold" />
 
             <TextView
@@ -89,7 +92,7 @@
         android:layout_width="100dp"
         android:layout_height="60dp"
         android:layout_marginStart="280dp"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="50dp"
         android:text="Chi tiết" />
 
 </RelativeLayout>

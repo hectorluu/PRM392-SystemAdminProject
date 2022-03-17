@@ -12,13 +12,14 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="DANH SÁCH NGƯỜI DÙNG"
+        android:textColor="@color/white"
         android:textSize="25sp"
         android:textStyle="bold"
         android:gravity="center"
         android:layout_marginTop="20dp"/>
 
     <LinearLayout
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="25dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
@@ -26,32 +27,38 @@
         android:focusableInTouchMode="true">
 
         <EditText
-            android:layout_width="300dp"
+            android:layout_width="275dp"
+            android:paddingLeft="10dp"
             android:layout_marginLeft="10dp"
             android:layout_marginRight="10dp"
-            android:layout_height="45dp"
+            android:layout_height="match_parent"
             android:inputType="text"
-            android:textSize="16dp"
+            android:background="#95ffffff"
+            android:textSize="16sp"
             android:hint="    Nhập Tên Người Dùng"
             android:textColor="@color/black"
-            android:id="@+id/txtSearchName"
-            >
+            android:id="@+id/txtSearchName">
         </EditText>
 
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+
+            android:layout_marginRight="10dp"
             android:src="@drawable/ic_baseline_search_24"
             android:onClick="clickToSearch"
-            android:padding="10dp">
+            android:padding="12dp"
+            android:contentDescription="search">
         </ImageView>
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/ic_baseline_rotate_right_24"
+
             android:onClick="clickToReset"
+            android:src="@drawable/ic_baseline_rotate_right_24"
             tools:ignore="OnClick"
-            android:padding="10dp">
+            android:padding="12dp"
+            android:contentDescription="reset">
         </ImageView>
     </LinearLayout>
 
@@ -59,8 +66,9 @@
         android:id="@+id/gvUser"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/white"
-        android:stretchMode="columnWidth"
-        android:layout_margin="10dp"/>
+        android:layout_margin="10dp"
+        android:background="#90ffffff"
+        android:padding="5dp"
+        android:stretchMode="columnWidth" />
 
 </LinearLayout>

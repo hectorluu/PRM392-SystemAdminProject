@@ -12,7 +12,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Tên Cửa Hàng:"
-            android:textSize="18sp"
+            android:textSize="20sp"
+            android:textStyle="bold"
             android:textColor="@color/black" />
         <TextView
             android:id="@+id/txtStoreApproveNameItem"
@@ -26,7 +27,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Địa Chỉ:"
-            android:textSize="18sp"
+            android:textSize="20sp"
+            android:textStyle="bold"
             android:textColor="@color/black" />
         <TextView
             android:id="@+id/txtAddressApproveItem"
@@ -41,7 +43,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Thương Hiệu:"
-            android:textSize="18sp"
+            android:textSize="20sp"
+            android:textStyle="bold"
             android:textColor="@color/black" />
         <TextView
             android:id="@+id/txtBrandNameOfStoreApproveItem"

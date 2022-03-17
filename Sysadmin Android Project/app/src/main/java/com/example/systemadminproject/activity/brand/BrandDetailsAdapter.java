@@ -6,6 +6,8 @@ import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
+import android.graphics.Typeface;
+import android.graphics.drawable.Drawable;
 import android.os.Looper;
 import android.util.Log;
 import android.view.Gravity;
@@ -89,8 +91,9 @@ public class BrandDetailsAdapter extends BaseAdapter implements ListAdapter {
 
             TextView Store = new TextView(view.getContext());
             LinearLayout.LayoutParams lp = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT);
-            Store.setTextSize(18);
+            Store.setTextSize(20);
             Store.setText("Danh Sách Cửa Hàng:");
+            Store.setTypeface(null, Typeface. BOLD);
             Store.setTag("uniqueStore");
             Store.setTextColor(Color.rgb(0, 0, 0));
             Store.setLayoutParams(lp);
@@ -101,9 +104,9 @@ public class BrandDetailsAdapter extends BaseAdapter implements ListAdapter {
             for (StoreListResponse store : storeList) {
                 TextView StoreTemp = new TextView(view.getContext());
                 LinearLayout.LayoutParams lpTemp = new LinearLayout.LayoutParams( LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT);
-                lpTemp.setMarginStart(30);
+                lpTemp.setMarginStart(40);
                 StoreTemp.setTextSize(18);
-                StoreTemp.setText("+ " + store.getName());
+                StoreTemp.setText("\u2022 " + store.getName());
                 StoreTemp.setTextColor(Color.rgb(0, 0, 0));
                 StoreTemp.setLayoutParams(lpTemp);
 
@@ -111,8 +114,9 @@ public class BrandDetailsAdapter extends BaseAdapter implements ListAdapter {
             }
 
             TextView User = new TextView(view.getContext());
-            User.setTextSize(18);
+            User.setTextSize(20);
             User.setText("Danh Sách Người Dùng:");
+            User.setTypeface(null, Typeface. BOLD);
             User.setTextColor(Color.rgb(0, 0, 0));
             User.setLayoutParams(lp);
             layout.addView(User);
@@ -121,9 +125,9 @@ public class BrandDetailsAdapter extends BaseAdapter implements ListAdapter {
             for (UserListResponse user : userList) {
                 TextView UserTemp = new TextView(view.getContext());
                 LinearLayout.LayoutParams lpTemp = new LinearLayout.LayoutParams( LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT);
-                lpTemp.setMarginStart(30);
+                lpTemp.setMarginStart(40);
                 UserTemp.setTextSize(18);
-                UserTemp.setText("+ " + user.getName());
+                UserTemp.setText("\u2022 " + user.getName());
                 UserTemp.setTextColor(Color.rgb(0, 0, 0));
                 UserTemp.setLayoutParams(lpTemp);
 
@@ -133,7 +137,12 @@ public class BrandDetailsAdapter extends BaseAdapter implements ListAdapter {
             Button btnDelete = new Button(view.getContext());
             LinearLayout.LayoutParams llbtn = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT);
             btnDelete.setText("Dừng Hoạt Động");
-            btnDelete.setGravity(Gravity.CENTER);
+            llbtn.weight = 1.0f;
+            llbtn.gravity = Gravity.CENTER;
+            llbtn.setMargins(0, 40, 0, 20);
+            btnDelete.setBackgroundColor(Color.rgb(144,22,22));
+            btnDelete.setPadding(30, 0, 30, 0);
+            btnDelete.setTextColor(Color.WHITE);
             btnDelete.setLayoutParams(llbtn);
 
             btnDelete.setOnClickListener(new View.OnClickListener() {
@@ -144,7 +153,7 @@ public class BrandDetailsAdapter extends BaseAdapter implements ListAdapter {
                                 @Override
                                 public void onResponse(@NonNull Call<Void> call, @NonNull Response<Void> response) {
                                     if (response.isSuccessful()) {
-                                        Toast.makeText(btnDelete.getContext(), "Delete Brand Successfully", Toast.LENGTH_SHORT).show();
+                                        Toast.makeText(btnDelete.getContext(), "Dừng Hoạt Động Thành Công", Toast.LENGTH_SHORT).show();
                                     } else {
                                         Toast.makeText(btnDelete.getContext(), "Something wrong happens", Toast.LENGTH_SHORT).show();
                                     }
@@ -162,7 +171,8 @@ public class BrandDetailsAdapter extends BaseAdapter implements ListAdapter {
                 }
             });
 
-            layout.addView(btnDelete);
+            if (_brand.getStatus() == 0)
+                layout.addView(btnDelete);
         }
 
         return view;

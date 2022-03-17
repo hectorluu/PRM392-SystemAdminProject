@@ -12,13 +12,14 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Tên Nhãn Hàng:"
-            android:textSize="18sp"
+            android:textStyle="bold"
+            android:textSize="20sp"
             android:textColor="@color/black" />
         <TextView
             android:id="@+id/txtBrandNameItem"
             android:layout_width="350dp"
             android:layout_height="wrap_content"
-            android:text="Brand Name"
+            android:text="\u2022 Brand Name"
             android:textSize="18sp"
             android:layout_marginLeft="30dp"
             android:textColor="@color/black" />
@@ -26,14 +27,15 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Trạng Thái:"
-            android:textSize="18sp"
+            android:textStyle="bold"
+            android:textSize="20sp"
             android:textColor="@color/black" />
         <TextView
             android:id="@+id/txtStatusItem"
             android:layout_width="350dp"
             android:layout_height="wrap_content"
             android:textAlignment="textStart"
-            android:text="Status"
+            android:text="\u2022 Status"
             android:layout_marginLeft="30dp"
             android:textSize="18sp"
             android:textColor="@color/black" />

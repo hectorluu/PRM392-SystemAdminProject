@@ -13,6 +13,7 @@
         android:layout_height="wrap_content"
         android:textAlignment="center"
         android:text="CHI TIẾT CỬA HÀNG"
+        android:textColor="@color/white"
         android:textSize="25sp"
         android:textStyle="bold"
         android:gravity="center"
@@ -20,9 +21,10 @@
 
     <GridView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:id="@+id/gvStoreDetails"
         android:stretchMode="columnWidth"
         android:layout_margin="10dp"
-        android:background="@color/white"/>
+        android:padding="5dp"
+        android:background="#90ffffff"/>
 </LinearLayout>

@@ -2,6 +2,7 @@ package com.example.systemadminproject.activity.storeApprove;
 
 import android.content.Intent;
 import android.graphics.Color;
+import android.graphics.Typeface;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -76,7 +77,8 @@ public class StoreApproveDetailsAdapter extends BaseAdapter implements ListAdapt
 
             TextView Store = new TextView(view.getContext());
             LinearLayout.LayoutParams lp = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT);
-            Store.setTextSize(18);
+            Store.setTextSize(20);
+            Store.setTypeface(null, Typeface. BOLD);
             Store.setText("Chủ Sở Hữu:");
             Store.setTag("uniqueUserApprove");
             Store.setTextColor(Color.rgb(0, 0, 0));
@@ -87,48 +89,103 @@ public class StoreApproveDetailsAdapter extends BaseAdapter implements ListAdapt
             for (UserListResponse user : userList) {
                 TextView UserTemp = new TextView(view.getContext());
                 LinearLayout.LayoutParams lpTemp = new LinearLayout.LayoutParams( LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT);
-                lpTemp.setMarginStart(30);
+                lpTemp.setMarginStart(40);
                 UserTemp.setTextSize(18);
-                UserTemp.setText("+ " + user.getName());
+                UserTemp.setText("\u2022 " + user.getName());
                 UserTemp.setTextColor(Color.rgb(0, 0, 0));
                 UserTemp.setLayoutParams(lpTemp);
 
                 layout.addView(UserTemp);
             }
 
-//            Button btnDelete = new Button(view.getContext());
-//            LinearLayout.LayoutParams llbtn = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT);
-//            btnDelete.setText("Dừng Hoạt Động");
-//            btnDelete.setGravity(Gravity.CENTER);
-//            btnDelete.setLayoutParams(llbtn);
-//
-//            btnDelete.setOnClickListener(new View.OnClickListener() {
-//                @Override
-//                public void onClick(View view) {
-//                    StoreService.getApi().deleteStore(_store.getId())
-//                            .enqueue(new Callback<Void>() {
-//                                @Override
-//                                public void onResponse(@NonNull Call<Void> call, @NonNull Response<Void> response) {
-//                                    if (response.isSuccessful()) {
-//                                        Toast.makeText(btnDelete.getContext(), "Delete Store Successfully", Toast.LENGTH_SHORT).show();
-//                                    } else {
-//                                        Toast.makeText(btnDelete.getContext(), "Something wrong happens", Toast.LENGTH_SHORT).show();
-//                                    }
-//                                }
-//
-//                                @Override
-//                                public void onFailure(@NonNull Call<Void> call,@NonNull Throwable t) {
-//                                    Toast.makeText(btnDelete.getContext(), "Call API Failed", Toast.LENGTH_SHORT).show();
-//                                }
-//                            });
-//                    Intent intent = new Intent(view.getContext(), ViewStoreActivity.class);
-//                    intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-//                    view.getContext().startActivity(intent);
-//                    layout.invalidate();
-//                }
-//            });
+            Button btnApprove = new Button(view.getContext());
+            LinearLayout.LayoutParams llbtn = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT);
+            btnApprove.setText("Chấp Nhận");
+            llbtn.gravity = Gravity.CENTER_HORIZONTAL;
+            llbtn.weight = 1.0f;
+            llbtn.setMargins(20, 40, 20, 0);
+            btnApprove.setBackgroundColor(Color.rgb(0, 128, 128));
+            btnApprove.setPadding(30, 20, 30, 20);
+            btnApprove.setTextColor(Color.WHITE);
+            btnApprove.setLayoutParams(llbtn);
 
-//            layout.addView(btnDelete);
+            btnApprove.setOnClickListener(new View.OnClickListener() {
+                StoreApproveStatus status = new StoreApproveStatus(0);
+                @Override
+                public void onClick(View view) {
+                    StoreService.getApi().approveStore(_storeApprove.getId(), status)
+                            .enqueue(new Callback<Void>() {
+                                @Override
+                                public void onResponse(@NonNull Call<Void> call, @NonNull Response<Void> response) {
+                                    if (response.isSuccessful()) {
+                                        Toast.makeText(btnApprove.getContext(), "Duyệt Thành Công", Toast.LENGTH_SHORT).show();
+                                    } else {
+                                        Toast.makeText(btnApprove.getContext(), "Something wrong happens", Toast.LENGTH_SHORT).show();
+                                    }
+                                }
+
+                                @Override
+                                public void onFailure(@NonNull Call<Void> call,@NonNull Throwable t) {
+                                    Toast.makeText(btnApprove.getContext(), "Call API Failed", Toast.LENGTH_SHORT).show();
+                                }
+                            });
+                    Intent intent = new Intent(view.getContext(), ViewStoreApproveActivity.class);
+                    intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                    view.getContext().startActivity(intent);
+                    layout.invalidate();
+                }
+            });
+
+//            layout.addView(btnApprove);
+
+            Button btnReject = new Button(view.getContext());
+            btnReject.setText("TỪ CHỐI");
+            btnReject.setBackgroundColor(Color.rgb(140, 22, 22));
+            btnReject.setPadding(30, 20, 30, 20);
+            btnReject.setTextColor(Color.WHITE);
+
+            btnReject.setLayoutParams(llbtn);
+
+            btnReject.setOnClickListener(new View.OnClickListener() {
+                StoreApproveStatus statusReject = new StoreApproveStatus(2);
+                @Override
+                public void onClick(View view) {
+                    StoreService.getApi().approveStore(_storeApprove.getId(), statusReject)
+                            .enqueue(new Callback<Void>() {
+                                @Override
+                                public void onResponse(@NonNull Call<Void> call, @NonNull Response<Void> response) {
+                                    if (response.isSuccessful()) {
+                                        Toast.makeText(btnReject.getContext(), "Duyệt Thành Công", Toast.LENGTH_SHORT).show();
+                                    } else {
+                                        Toast.makeText(btnReject.getContext(), "Something wrong happens", Toast.LENGTH_SHORT).show();
+                                    }
+                                }
+
+                                @Override
+                                public void onFailure(@NonNull Call<Void> call,@NonNull Throwable t) {
+                                    Toast.makeText(btnReject.getContext(), "Call API Failed", Toast.LENGTH_SHORT).show();
+                                }
+                            });
+                    Intent intent = new Intent(view.getContext(), ViewStoreApproveActivity.class);
+                    intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                    view.getContext().startActivity(intent);
+                    layout.invalidate();
+                }
+            });
+
+//            layout.addView(btnReject);
+
+            LinearLayout parent = new LinearLayout(view.getContext());
+
+            LinearLayout.LayoutParams paramsLayout = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT);
+            paramsLayout.setMargins(10, 50, 10, 0);
+            parent.setLayoutParams(paramsLayout);
+            parent.setOrientation(LinearLayout.HORIZONTAL);
+
+            parent.addView(btnApprove);
+            parent.addView(btnReject);
+
+            layout.addView(parent);
         }
 
 
